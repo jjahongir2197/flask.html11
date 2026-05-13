@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notes App</title>
+</head>
+<body>
+
+    <h1>Notes Application</h1>
+
+    <form method="POST">
+
+        <input type="text" name="title"
+        placeholder="Title">
+        <br><br>
+
+        <textarea name="text"></textarea>
+        <br><br>
+
+        <button type="submit">
+            Save
+        </button>
+
+    </form>
+
+    <hr>
+
+    {% for note in notes %}
+
+        <h2>{{ note.title }}</h2>
+        <p>{{ note.text }}</p>
+
+        <a href="/delete/{{ loop.index0 }}">
+            Delete
+        </a>
+
+        <hr>
+
+    {% endfor %}
+
+</body>
+</html>
